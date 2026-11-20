@@ -1,5 +1,5 @@
 from loader import load_and_split
-from retriever import VectorRetriever
+from reranker import RerankRetriever 
 from generator import Generator
 
 TOP_K = 5
@@ -8,7 +8,7 @@ def main():
     chunks = load_and_split()
     print(f"共有 {len(chunks)} 个文本块, 开始向量化...")
 
-    retriever = VectorRetriever()
+    retriever = RerankRetriever() 
     retriever.build(chunks)
     print("索引建立完成，输入问题测试检索，直接按回车退出。\n")
 
